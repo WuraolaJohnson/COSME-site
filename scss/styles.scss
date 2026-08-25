@@ -1,0 +1,919 @@
+@use "variable" as *;
+
+@font-face {
+    font-family: Inder;
+    src: url(/assets/fonts/Inder-Regular.ttf);
+}
+
+@font-face {
+    font-family: Inika;
+    src: url(/assets/fonts/Inika-Regular.ttf);
+}
+
+@font-face {
+    font-family: Inika-Bold;
+    src: url(/assets/fonts/Inika-Bold.ttf);
+}
+
+@font-face {
+    font-family: InkFree;
+    src: url(/assets/fonts/Inkfree.ttf);
+}
+
+@font-face {
+    font-family: InriaSerif;
+    src: url(/assets/fonts/InriaSerif-Regular.ttf);
+}
+
+@font-face {
+    font-family: NuosuSIL;
+    src: url(/assets/fonts/NuosuSIL-Regular.ttf);
+}
+
+html{
+    font-size: 4px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: $background;
+    color: $text;
+    font-family: NuosuSIL;
+}
+
+.announcement{
+    background-color: $primary;
+    color:$announcetxt;
+    text-align: center;
+    font-family: Inder;
+    font-size: 2rem;
+    padding: 6px 0 5px ;
+}
+
+.banner{
+    background-image: url(/assets/images/banner\ bg.jpg);
+    background-size:cover ;
+    background-position: center;
+    padding:2rem 5rem 0;
+    height:150rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+// .banner nav{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     padding: 2.75rem 0 2.5rem;
+// }
+
+// .banner nav ul{
+//     display: flex;
+//     flex-direction: row;
+//     text-transform: uppercase;
+//     font-family: Inika;
+//     list-style: none;
+//     align-items: center;
+// }
+
+// .banner nav ul li{
+//     font-size: 3rem;
+//     padding: 0 6rem ;
+// }
+
+.logo{
+    font-family: InkFree;
+    font-size: 6rem;
+    background: $logo;
+    background-clip: text;
+    color: transparent;
+}
+
+.bar{
+    display: none;
+    font-size: 6rem;
+}
+
+.menu{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: calc(100vw - 10rem);
+    padding: 4rem 5rem;
+    background-color: $white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.menu.active {
+    display: flex;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 3rem;
+}
+
+.menu .nav-list{
+    padding-bottom: 3rem;
+    border-bottom: 1px solid $infoCon;
+}
+
+.menu .nav-list li{
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+}
+
+.menu .utilities{
+    padding-top: 3rem;
+}
+
+.menu .utilities form{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menu .utilities .icons{
+    display: flex;
+    gap: 3rem;
+}
+
+form{
+    background-color: aliceblue;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.utilities{
+    padding-left: 0;
+}
+
+.utilities i{
+    font-size: 4rem;
+    padding-right: 2rem;
+}
+
+.utilities {
+    input{
+        border: none;
+        background-color: transparent;
+    }
+
+    input:focus,
+    input:active,
+    input:target{
+        border: none;
+        background-color: transparent;
+        outline-color: transparent;
+        border-color: transparent;
+    }
+
+    .icons{
+        display: flex;
+        gap: 1.5rem;
+        font-size: 4rem;
+    }
+}
+
+.banner h1{
+    color: $white;
+    font-size: 10rem;
+    width: 50%;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4.75rem 5rem 4.5rem;
+    position: absolute;
+    width: calc(100% - 10rem);
+}
+
+.logo{
+    font-family: InkFree;
+    font-size: 6rem;
+}
+
+nav ul{
+    display: flex;
+    text-transform: uppercase;
+    font-family: Inika;
+    list-style: none;
+    align-items: center;
+    // padding-left: 30rem;
+    color: $navtext;
+    
+    li{
+        font-size: 3rem;
+        padding: 0 6rem ;
+    }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap:8rem ;
+    padding:5rem ;
+}
+
+.hero{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    height: 125rem;
+
+    .imgCon{
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 3rem);
+        gap:3rem;
+    }
+
+    .imgCon,
+    .imgConAlt{
+        width: 50%;
+
+    }
+
+    .imCo img{
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+    
+    }
+
+    .imgCon1,
+    .imgCon2 {
+        height: 50%;
+    }
+
+    .imCo{
+        position: relative;
+    }
+
+    .imCo p{
+        position: absolute;
+        display: flex;
+        width: calc(100% - 5rem);
+        height: 100%;
+        z-index: 1;
+        color: $white;
+        font-size: 8rem;
+        align-items: center;
+        padding-left: 5rem;
+    }
+
+    .imgCon1 img,
+    .imgCon2 img{
+        object-position: center -8rem  ;
+    }
+
+    .imgCon3{
+        height: 100%;
+    }
+}
+
+.secs{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.secs .sec h2{
+    font-size: 8rem;
+    font-weight: 600;
+    width: 100%;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    width: 100%;
+    padding: 4rem 0 8rem;
+
+    .productCard{
+        width:calc(25% - 2.25rem);
+    }
+
+    .productCard .proCon{
+        width: 100%;
+        height: 101.5rem;
+        border-radius: 2rem;
+        overflow: hidden;
+        background-color: $white;
+    }
+
+    .productCard .proCon img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .productCard .PC1 img{
+        object-fit: contain;
+    }
+
+    .productCard h4{
+        font-size: 6.5rem;
+        font-weight: 400;
+    }
+
+    .productCard p{
+        font-size: 4rem;
+        font-weight: 400;
+    }
+}
+
+.sec button{
+    background-color: $primary;
+    border: none;
+    border-radius: 2rem;
+    padding: 5rem;
+    display: flex;
+    gap: 10rem;
+    font-family: InriaSerif;
+    font-size: 4rem;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+}
+
+.info{
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.info .infoCard{
+    display: flex;
+    padding: 6rem;
+    border: solid 1px $infoCon;
+    border-radius: 2rem;
+    font-size: 5rem;
+    width: calc(50% - 22rem);
+    gap:12rem;
+    text-transform: uppercase;
+    align-items: center;
+    box-shadow: 0 1px 4px 0 $infoCon;
+
+}
+
+.info .infoCard p{
+    width: 60%;
+}
+
+.infoCard .iconCon{
+    display: flex;
+    border-radius: 100%;
+    background-color: $infoCon;
+    padding: 4rem;
+}
+
+.infoCard .iconCon i{
+    font-size: 7rem;
+    color: $white;
+}
+
+.videoCon{
+    width: 100%;
+    height: 155rem;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.videoCon video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15rem 5rem;
+    background-color: $secondary;
+    color: $navtext;
+
+}
+
+footer .logo{
+    font-size: 10rem;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    text-transform: uppercase;
+    font-family: Inika;
+    font-size: 3rem;
+    gap: 12rem;
+}
+
+// footer .nav-list li{
+//     padding: 0 !important;
+// }
+
+footer p{
+    font-size: 2rem;
+    font-style: italic;
+}
+
+@media (max-width:1233px) {
+    .banner h1{
+        width: 60%;
+    }
+
+    .hero{
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .hero .imgCon,
+    .hero .imgConAlt
+    {
+        width: 100%;
+    }
+
+    .hero .imgCon{
+        height: 800px;
+    }
+
+    .hero .imgCon .imCo{
+        height: calc(50% - 1.5rem);
+    }
+
+    .hero .imgCon3 img{
+        object-position: top;
+    }
+}
+
+@media (max-width:979px) {
+    .bar{
+        display: block;
+    }
+
+    nav > ul{
+        display: none;
+    }
+
+    // .menu{
+    //     width: 100vw;
+    //     left: 0;
+    //     padding: 4rem;
+    // }
+
+    // .menu ul{
+    //     gap: 3rem;
+    // }
+
+    // .menu .nav-list li{
+    //     font-size: 4rem;
+    // }
+
+    // .menu .utilities form{
+    //     display: flex;
+    //     align-items: center;
+    // }
+
+    // .menu .utilities .icons{
+    //     align-items: center;
+    // }
+
+    .hero .imgCon{
+        height: 600px;
+    }
+
+    .secs .sec h2{
+        font-size: 7rem;
+    }
+
+    .products{
+        padding: 4rem 0 2.5rem;
+    }
+
+    .products .productCard{
+        width:calc(50% - 2.25rem);
+    }
+
+    .productCard h4{
+        font-size: 6rem;
+    }
+
+    .productCard p{
+        font-size: 3.5rem;
+    }
+
+    .sec button{
+        font-size: 3.25rem;
+        gap: 2rem;
+    }
+
+    .info .infoCard{
+        font-size: 5rem;
+    }
+
+    .info .infoCard{
+        width: 100%;
+    }
+
+    .videoCon{
+        height: 120rem;
+    }
+
+    footer .logo{
+        font-size: 8rem;
+    }
+}
+
+@media (max-width:800px) {
+    .banner{
+        height: 100rem !important;
+    }
+
+    .banner h1,
+    .hero .imCo p{
+        font-size: 7.5rem;
+        width: 100%;
+    }
+
+    .hero .imgCon{
+        height: 500px;
+    }
+
+    .products .productCard .proCon{
+        height: 90rem;
+    }
+
+    .productCard h4{
+        font-size: 5rem;
+    }
+
+    .productCard p{
+        font-size: 3rem;
+    }
+
+    .sec button{
+        font-size: 3.5rem;
+        gap: 3rem;
+    }
+
+    .info .infoCard{
+        font-size: 3rem;
+        padding: 3rem;
+    }
+
+    .infoCard .iconCon{
+        padding: 3rem;
+    }
+
+    .info .infoCard p{
+        font-size: 4rem;
+    }
+
+    .infoCard .iconCon i{
+        font-size: 5rem;
+    }
+
+    footer{
+        flex-direction: column;
+        gap: 7rem;
+        padding: 10rem 3rem;
+    }
+
+    .videoCon{
+        height: 100rem;
+    }
+
+    footer .logo{
+        font-size: 6.5rem;
+    }
+
+    footer ul{
+        font-size: 2.5rem;
+    }
+
+    footer p{
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width:679px) {
+    .hero .imgCon{
+        height:400px;
+    }
+
+    .products .productCard .proCon{
+        height: 80rem;
+    }
+
+    .videoCon{
+        height: 80rem;
+    }
+}
+
+@media (max-width:500px){
+    .announcement{
+        font-size: 1.5rem;
+    }
+
+    .banner{
+        height: 71rem !important;
+    }
+
+    .hero .imgCon{
+        height: 300px;
+    }
+
+    .secs .sec h2{
+        font-size: 7rem;
+    }
+
+    .products .productCard .proCon{
+        height: 50rem;
+    }
+
+    .sec button{
+        font-size: 3rem;
+        gap: 5rem;
+    }
+
+    .info .infoCard{
+        font-size: 4rem;
+        padding: 3rem;
+        gap: 3rem;
+    }
+
+    .infoCard .iconCon{
+        padding: 3.25rem;
+    }
+
+    .info .infoCard p{
+        width: 100%;
+    }
+
+    .infoCard .iconCon i{
+        font-size: 5rem;
+    }
+}
+
+@media (max-width:420px) {
+   
+    .hero .imgCon{
+        height: 240px;
+    }
+
+    .hero .imgCon1 img,
+    .hero .imgCon2 img{
+        object-position: center;
+    }
+
+    .banner h1,
+    .hero .imCo p{
+        font-size: 5rem;
+    }
+
+    .secs .sec h2{
+        font-size: 3rem;
+    }
+
+    .products .productCard h4{
+        font-size: 2.5rem;
+    }
+
+    .products .productCard p{
+        font-size: 2rem;
+    }
+
+    .sec button{
+        font-size: 2.3rem;
+        gap: 2rem;
+    }
+
+    .info .infoCard p{
+        font-size: 3rem;
+    }
+
+    .infoCard .iconCon{
+        padding: 2rem;
+    }
+
+    .infoCard .iconCon i{
+        font-size: 3rem;
+    }
+
+    .videoCon{
+        height: 50rem;
+    }
+
+    footer{
+        padding: 5rem 2.5rem;
+        gap:2rem;
+    }
+
+    footer .logo{
+        font-size: 5rem;
+    }
+
+     footer ul{
+        flex-direction: column;
+        font-size: 2rem;
+        gap:2rem;
+        align-items: center;
+    }
+
+
+    footer p{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:330px) {
+    nav .logo{
+        font-size: 3rem;
+    }
+
+    .bar{
+        font-size: 3rem;
+    }
+
+    .products .productCard{
+        width: 100%;
+    }
+}
+
+@media (min-width:240px) and (max-width:330px) {
+    .products .productCard .proCon img{
+        object-position: top;
+    }
+}
+
+@media (max-width: 170px) {
+    .announcement{
+        font-size: .5rem;
+        padding: .5rem;
+    }
+    .banner{
+        height: 40rem !important;
+        padding:0 1rem;
+    }
+
+    .banner h1,
+    .hero .imCo p{
+        font-size: 2.5rem;
+        width: 100%;
+    }
+
+    nav{
+        padding:  1rem;
+        width: calc(100% - 2rem);
+    }
+    nav .logo{
+        font-size: 2rem;
+    }
+
+    .bar{
+        font-size: 2rem;
+    }
+
+    .menu{
+    width: calc(100vw - 2rem);
+    padding: 0.8rem 1rem;
+    }
+
+    .menu .nav-list{
+        padding-bottom: 1rem;
+    }
+
+    .menu .utilities{
+        padding-top: 1rem;
+    }
+
+    .menu ul{
+        gap: .5rem;
+    }
+    nav ul li{
+        font-size: 1rem;
+    }
+
+    .utilities form{
+        padding: .5rem;
+    }
+
+    .utilities input{
+        font-size: 1rem;
+    }
+
+    .menu .utilities .icons{
+        gap: .2rem;
+    }
+    .utilities i{
+        font-size: 1rem;
+        padding-right: .5rem;
+    }
+
+        main{
+    padding: 1rem;
+    }
+
+    .hero {
+        gap: 1rem;
+    }
+    .hero .imgCon{
+        gap: 1rem;
+        height: 150px;
+    }
+
+        .hero .imgCon .imCo {
+        height: calc(50% - .5rem);
+    }
+
+    .hero .imgCon1 img,
+    .hero .imgCon2 img{
+        object-position: center;
+    }
+
+    .hero .imCo p{
+        padding-left: 1rem;
+    }
+
+    .secs .sec h2{
+        font-size: 1.75rem;
+    }
+
+        .products .productCard .proCon {
+        height: 25rem;
+    }
+
+    .products .productCard h4{
+        font-size: 1.5rem;
+    }
+
+    .products .productCard p{
+        font-size: 1.25rem;
+    }
+
+    .sec button{
+        font-size: 1rem;
+        gap: 1rem;
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .info .infoCard{
+        gap: 1rem;
+    }
+    .info .infoCard p{
+        font-size: 1.5rem;
+    }
+
+    .infoCard .iconCon{
+        padding: 1rem;
+    }
+
+    .infoCard .iconCon i{
+        font-size: 2rem;
+    }
+
+    .videoCon{
+        height: 25rem;
+    }
+
+    footer{
+        padding: 2rem 1.5rem;
+        gap:2rem;
+    }
+
+    footer .logo{
+        font-size: 3rem;
+    }
+
+     footer ul{
+        flex-direction: column;
+        font-size: 1rem;
+        gap:1rem;
+        align-items: center;
+    }
+
+
+    footer p{
+        font-size: .5rem;
+    }
+}
